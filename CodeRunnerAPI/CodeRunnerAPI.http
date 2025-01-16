@@ -1,0 +1,6 @@
+@CodeRunnerAPI_HostAddress = http://localhost:5241
+
+GET {{CodeRunnerAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

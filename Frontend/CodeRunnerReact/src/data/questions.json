@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "title": "Reverse a String",
+      "description": "Write a function that reverses a string.",
+      "testCases": [
+        { "input": "\"hello\"", "expectedOutput": "\"olleh\"" },
+        { "input": "\"world\"", "expectedOutput": "\"dlrow\"" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Sum of Two Numbers",
+      "description": "Write a function that returns the sum of two numbers.",
+      "testCases": [
+        { "input": "1,2", "expectedOutput": "3" },
+        { "input": "10,20", "expectedOutput": "30" }
+      ]
+    }
+  ]  
