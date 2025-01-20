@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CodeRunnerAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+253578583e67a39ef57da4d7b01dd1cf63261c65")]
 [assembly: System.Reflection.AssemblyProductAttribute("CodeRunnerAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CodeRunnerAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -33,6 +33,55 @@ const CodeExecution = () => {
   const [selectedLanguage, setSelectedLanguage] = useState("python");
   const [selectedQuestion, setSelectedQuestion] = useState(codingQuestions[0]);
 
+  // const executeCode = async () => {
+  //   setLoading(true);
+  //   setOutput("");
+  //   setError("");
+  //   try {
+  //     const response = await axios.post(
+  //       "http://localhost:5000/api/codeexecution/run",
+  //       {
+  //         language: selectedLanguage,
+  //         code,
+  //         test_cases: selectedQuestion.test_cases,
+  //       }
+  //     );
+  //     console.log(response.data);
+
+  //     const actualOutputs = Array.isArray(response.data.output)
+  //       ? response.data.output.map((item) => item.trim())
+  //       : response.data.output.split("\n").map((item) => item.trim());
+  //     const results = selectedQuestion.test_cases.map((testCase, index) => {
+  //       // Convert input array to a comma-separated string for display
+  //       const inputStr = Array.isArray(testCase.input)
+  //         ? testCase.input.join(",")
+  //         : testCase.input;
+  //       const expectedStr = Array.isArray(testCase.expected_output)
+  //         ? testCase.expected_output.join("")
+  //         : testCase.expected_output;
+  //       const actualStr = actualOutputs[index];
+
+  //       const isPass = expectedStr === actualStr;
+
+  //       return {
+  //         testCase: inputStr,
+  //         expected: expectedStr,
+  //         actual: actualStr,
+  //         result: isPass ? "Pass" : "Fail",
+  //       };
+  //     });
+
+  //     setOutput(results);
+  //   } catch (err) {
+  //     console.log("Error occurred:", err); // Log the entire error to debug
+  //     setError(err.response?.data?.error || "An error occurred");
+  //     setOutput("");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+
   const executeCode = async () => {
     setLoading(true);
     setOutput("");
@@ -46,23 +95,22 @@ const CodeExecution = () => {
           test_cases: selectedQuestion.test_cases,
         }
       );
-      console.log(response.data);
-
+  
       const actualOutputs = Array.isArray(response.data.output)
         ? response.data.output.map((item) => item.trim())
         : response.data.output.split("\n").map((item) => item.trim());
+  
       const results = selectedQuestion.test_cases.map((testCase, index) => {
-        // Convert input array to a comma-separated string for display
         const inputStr = Array.isArray(testCase.input)
-          ? testCase.input.join(",")
+          ? testCase.input.join(", ")
           : testCase.input;
         const expectedStr = Array.isArray(testCase.expected_output)
-          ? testCase.expected_output.join("")
+          ? testCase.expected_output.join(", ")
           : testCase.expected_output;
         const actualStr = actualOutputs[index];
-
+  
         const isPass = expectedStr === actualStr;
-
+  
         return {
           testCase: inputStr,
           expected: expectedStr,
@@ -70,17 +118,18 @@ const CodeExecution = () => {
           result: isPass ? "Pass" : "Fail",
         };
       });
-
+  
       setOutput(results);
     } catch (err) {
-      console.log("Error occurred:", err); // Log the entire error to debug
-      setError(err.response?.data?.error || "An error occurred");
+      console.error("Error occurred:", err); // Log error for debugging
+      setError(err.response?.data?.error || "An error occurred while executing code");
       setOutput("");
     } finally {
       setLoading(false);
     }
   };
-
+  
+  
   const handleLanguageChange = (e) => {
     const language = e.target.value;
     setSelectedLanguage(language);
