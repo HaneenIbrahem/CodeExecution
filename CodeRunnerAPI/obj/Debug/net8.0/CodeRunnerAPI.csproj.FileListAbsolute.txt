@@ -31,3 +31,4 @@ C:\Users\hp\Desktop\CodeRunner\CodeRunnerAPI\obj\Debug\net8.0\CodeRunnerAPI.pdb
 C:\Users\hp\Desktop\CodeRunner\CodeRunnerAPI\obj\Debug\net8.0\CodeRunnerAPI.genruntimeconfig.cache
 C:\Users\hp\Desktop\CodeRunner\CodeRunnerAPI\obj\Debug\net8.0\ref\CodeRunnerAPI.dll
 C:\Users\hp\Desktop\CodeRunner\CodeRunnerAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\hp\Desktop\CodeRunner\CodeRunnerAPI\obj\Debug\net8.0\CodeRunnerAPI.sourcelink.json
